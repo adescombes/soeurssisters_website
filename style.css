@@ -1,0 +1,107 @@
+/* GENERAL */
+
+/* A TESTER : Cela configure automatiquement le Dark Mode si 
+l'utilisateur utilise un thème sombre sur son système. */
+/*
+@media (prefers-color-scheme: dark) {
+    :root {
+        --background-color: #5E5E5E;
+        --text-color: #DBD6CE;
+    }
+} */
+
+:root {
+      --bg: #56676d;
+      --text: #e8e5df;
+      --accent: #f3c7c2;
+      --line: rgba(232, 229, 223, .42);
+      --mono: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+    }
+    * { box-sizing: border-box; }
+    html { background: var(--bg); }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--mono);
+      font-size: 12px;
+      line-height: 1.42;
+      letter-spacing: .015em;
+    }
+    a { color: inherit; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+    a:hover { color: var(--accent); }
+    .site-header {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: clamp(22px, 5.5vw, 86px);
+      padding: 16px 24px 28px;
+      flex-wrap: wrap;
+    }
+    .site-header a { white-space: nowrap; }
+    .layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(280px, 1fr) minmax(0, 1fr);
+      gap: clamp(24px, 4.4vw, 68px);
+      align-items: start;
+      padding: clamp(22px, 6vw, 22px) 2vw 44px;
+    }
+    .intro { padding-top: 0; text-align: justify; }
+    .intro p { margin: 0 0 22px; }
+    .section-label { margin: 0 0 8px; font-weight: 700; }
+    .media { min-width: 0; padding-top: 92px; }
+    .hero-art {
+      display: block;
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      border: 1px solid rgba(0,0,0,.55);
+      background: #7c8583;
+    }
+    .network { margin: 44px 0 18px; }
+    .network p { margin: 0 0 18px; }
+    .embed {
+      width: 100%;
+      border: 1px solid rgba(255,255,255,.24);
+      background: rgba(0,0,0,.08);
+      overflow: hidden;
+      margin: 8px 0;
+    }
+    .embed iframe { display: block; width: 100%; border: 0; }
+    .soundcloud iframe { height: 220px; }
+    .mixcloud iframe { height: 110px; }
+    .dates { padding-top: 0; }
+    .dates h2 {
+      margin: 0 0 2px;
+      font-size: 1em;
+      font-weight: 700;
+    }
+    .date-group { margin: 0 0 26px; }
+    .date-group p { margin: 0; }
+    .muted { opacity: .96; }
+    @media (min-width: 1500px) {
+      .layout { gap: 4.7vw; }
+      body { font-size: 13px; }
+    }
+    @media (max-width: 900px) {
+      .layout {
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+        gap: 34px;
+        padding: 28px 24px 40px;
+      }
+      .media { padding-top: 0; grid-column: 1 / -1; grid-row: 1; width: min(100%, 560px); justify-self: center; }
+      .intro { grid-column: 1; }
+      .dates { grid-column: 2; }
+      .site-header { padding-bottom: 12px; }
+    }
+    @media (max-width: 600px) {
+      body { font-size: 12px; }
+      .site-header { gap: 12px 22px; padding: 16px 14px 8px; }
+      .layout { display: flex; flex-direction: column; gap: 34px; padding: 24px 18px 36px; }
+      .media { order: -1; width: 100%; padding: 0; }
+      .intro, .dates { width: 100%; }
+      .network { margin-top: 28px; }
+      .soundcloud iframe { height: 190px; }
+    }
+    
+    
